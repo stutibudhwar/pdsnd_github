@@ -100,7 +100,7 @@ def time_stats(df):
     """The mode of a set of values is the value that appears most often. It can be multiple values. The axis to iterate over while searching for the mode: 0 or 'index' : get mode of each column.
     """
     common_month = df['month'].mode().values[0]
-    print('The most common month would be: {}'.format(common_month))
+    print('The most common month for travel would be: {}'.format(common_month))
     
     # TO DO: display the most common day of week
     common_day = df['day_of_week'].mode().values[0]
