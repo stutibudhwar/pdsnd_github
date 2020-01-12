@@ -36,7 +36,7 @@ def get_filters():
         else:
             break
 
-    # TO DO: get user input for month (all, january, february, ... , june) HINT:Use a while loop to handle invalid inputs
+    # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         month = input("Please enter the month with which you would like to filter: January, February, March, April, May, June or type 'all' if you do not have any preference? \n ").lower()
         if month not in MONTHS:
@@ -100,7 +100,7 @@ def time_stats(df):
     """The mode of a set of values is the value that appears most often. It can be multiple values. The axis to iterate over while searching for the mode: 0 or 'index' : get mode of each column.
     """
     common_month = df['month'].mode().values[0]
-    print('The most common month for travel would be: {}'.format(common_month))
+    print('The most common month would be: {}'.format(common_month))
     
     # TO DO: display the most common day of week
     common_day = df['day_of_week'].mode().values[0]
@@ -181,18 +181,14 @@ def user_stats(df):
     try:
         earliest_year_of_birth = np.int(min(df['Birth Year']))
         print("\nThe earliest year of birth would be {}.".format(earliest_year_of_birth))
-    except:
-        print("\nSorry! The data for the earliest year of birth is not available.")
-    try:
+
         most_recent_year_of_birth = np.int(max(df['Birth Year']))
         print("\nThe most recent year of birth would be {}.".format(most_recent_year_of_birth))
-    except:
-        print("\nSorry! The data for the earliest year of birth is not available.")                       
-    try:
+
         most_common_year_of_birth = int((df['Birth Year']).mode().values[0])
         print("\nThe most common year of birth would be {}.".format(most_common_year_of_birth))
     except:
-        print("\nSorry! The data for the most common year of birth is not available.")                     
+        print("\nSorry! The data is not available.")                     
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
